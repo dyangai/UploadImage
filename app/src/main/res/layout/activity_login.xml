@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+    android:id="@+id/rl_login"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_marginRight="50dp"
+    android:background="@drawable/sp_rectangle_root"
+    >
+
+
+    <EditText
+        android:id="@+id/et_email"
+        android:paddingLeft="20dp"
+        android:drawableLeft="@drawable/email2"
+        android:drawablePadding="20dp"
+        android:hint="Email"
+        android:textColorHint="#B9B9B9"
+        android:backgroundTint="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:textColor="#3498DB"
+        android:inputType="textEmailAddress"
+        android:fontFamily="@font/montserratregular"
+        />
+
+    <View
+        android:id="@+id/v_separator"
+        android:layout_below="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#FFC9CACA"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:paddingLeft="20dp"
+        android:drawableLeft="@drawable/password"
+        android:drawablePadding="20dp"
+        android:layout_below="@+id/v_separator"
+        android:hint="Password"
+        android:textColor="#3498DB"
+        android:textColorHint="#B9B9B9"
+        android:backgroundTint="#FFF"
+        android:layout_width="240dp"
+        android:layout_height="65dp"
+        android:fontFamily="@font/montserratregular"
+        android:inputType="textPassword"
+        />
+
+
+
+</RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/button_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded"
+        android:layout_marginRight="25dp"
+        android:layout_alignParentRight="true"
+        android:elevation="10dp"
+        android:radius="5dp"
+        android:src="@drawable/arrow"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:layout_above="@+id/rl_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:text="@string/t1"
+        android:textColor="#3498DB"
+        android:layout_marginBottom="60dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/montserratregular"/>
+
+    <TextView
+        android:id="@+id/text_view_forget_password"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_login"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="187dp"
+        android:fontFamily="@font/montserratregular"
+        android:text="@string/t4"
+        android:textColor="#B9B9B9"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/register"
+        android:elevation="100dp"
+        android:radius="100dp"
+        android:layout_width="192dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/rl_login"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/bgbottom"
+        android:fontFamily="@font/montserratregular"
+        android:text="@string/t3"
+        android:textAllCaps="false"
+        android:textColor="#3498DB"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

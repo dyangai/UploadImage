@@ -1,0 +1,204 @@
+{
+  "Data Produk" : {
+    "Dm8AqcwQDufNTRPAyZVyQIR4kVY2" : {
+      "-LrISXzWkX5HWzw8reky" : {
+        "harga" : "1770000",
+        "id_produk" : "-LrISXzWkX5HWzw8reky",
+        "id_user" : "Dm8AqcwQDufNTRPAyZVyQIR4kVY2",
+        "image" : "",
+        "merk" : "SPECTRA",
+        "nama_produk" : "Breastpump 9+",
+        "stok" : "10"
+      }
+    },
+    "KA4v4xjC91cs1qanihhedVxJ8EM2" : {
+      "-Luvcmet4OIAoFi4hY2j" : {
+        "harga" : "25000",
+        "id_produk" : "-Luvcmet4OIAoFi4hY2j",
+        "id_user" : "KA4v4xjC91cs1qanihhedVxJ8EM2",
+        "image" : "",
+        "merk" : "apa",
+        "nama_produk" : "apa",
+        "stok" : "25"
+      }
+    },
+    "W4uQMIqmA6aJ7WhTMDW4CP4IUon2" : {
+      "-LwU5Bf3J9zE_cGhHezk" : {
+        "harga" : "5000",
+        "id_produk" : "-LwU5Bf3J9zE_cGhHezk",
+        "id_user" : "W4uQMIqmA6aJ7WhTMDW4CP4IUon2",
+        "image" : "",
+        "merk" : "apa",
+        "nama_produk" : "apa",
+        "stok" : "5"
+      }
+    },
+    "a9OTFDjFm7YzV6XC4YzbbwqiTG73" : {
+      "-LrHrCqLeYXgEzCb35Xi" : {
+        "harga" : "45000",
+        "id_produk" : "-LrHrCqLeYXgEzCb35Xi",
+        "id_user" : "a9OTFDjFm7YzV6XC4YzbbwqiTG73",
+        "image" : "",
+        "merk" : "beureur",
+        "nama_produk" : "Penlight",
+        "stok" : "2"
+      },
+      "-LrHsROQcuIYzUTxALY_" : {
+        "harga" : "35000",
+        "id_produk" : "-LrHsROQcuIYzUTxALY_",
+        "id_user" : "a9OTFDjFm7YzV6XC4YzbbwqiTG73",
+        "image" : "",
+        "merk" : "Polygreen",
+        "nama_produk" : "Thermometer",
+        "stok" : "2"
+      }
+    },
+    "tCreRog5VjcqHqNxHvwWCBmu41E3" : {
+      "-LqyORNl8ORdMqolsAkA" : {
+        "harga" : "50000",
+        "id_produk" : "-LqyORNl8ORdMqolsAkA",
+        "id_user" : "tCreRog5VjcqHqNxHvwWCBmu41E3",
+        "image" : "",
+        "merk" : "omron",
+        "nama_produk" : "nebu",
+        "stok" : "5"
+      },
+      "-Lqz43CNjGAN0RadU9LN" : {
+        "harga" : "95000",
+        "id_produk" : "-Lqz43CNjGAN0RadU9LN",
+        "id_user" : "tCreRog5VjcqHqNxHvwWCBmu41E3",
+        "image" : "",
+        "merk" : "Onemed",
+        "nama_produk" : "Stethoscope",
+        "stok" : "50"
+      },
+      "-LrIgnbF2AVWqVdR3cwk" : {
+        "harga" : "50000",
+        "id_produk" : "-LrIgnbF2AVWqVdR3cwk",
+        "id_user" : "tCreRog5VjcqHqNxHvwWCBmu41E3",
+        "image" : "",
+        "merk" : "amla",
+        "nama_produk" : "apa",
+        "stok" : "5"
+      }
+    },
+    "tLQaZ9UX0GWztlswD34PhNO7qxN2" : {
+      "-LrMgFellH3B6mUUmrGC" : {
+        "harga" : "5000",
+        "id_produk" : "-LrMgFellH3B6mUUmrGC",
+        "id_user" : "tLQaZ9UX0GWztlswD34PhNO7qxN2",
+        "image" : "",
+        "merk" : "apa",
+        "nama_produk" : "barang",
+        "stok" : "5"
+      }
+    }
+  },
+  "Users" : {
+    "1KdSkUTvEPOR5FB3wWYwWDfuhLq2" : {
+      "email" : "aad@gmail.com",
+      "id" : "1KdSkUTvEPOR5FB3wWYwWDfuhLq2",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/uploadimage-af6be.appspot.com/o/userimage%2Fbf3a037c-89da-4fd6-97ef-cfe7d22cfbe6?alt=media&token=9954c566-2316-4ef5-9360-cde4cd6a7759",
+      "name" : "Apaadanya",
+      "outlet" : "Outlet Name"
+    },
+    "5j8hqm2DPDOTRZCOe9KZqUPov1x2" : {
+      "email" : "dyang041120istighfaro@gmail.con",
+      "id" : "5j8hqm2DPDOTRZCOe9KZqUPov1x2",
+      "image" : "",
+      "name" : "we",
+      "outlet" : "we"
+    },
+    "Dm8AqcwQDufNTRPAyZVyQIR4kVY2" : {
+      "email" : "reinaldo.horo@yahoo.co.id",
+      "id" : "Dm8AqcwQDufNTRPAyZVyQIR4kVY2",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/uploadimage-af6be.appspot.com/o/userimage%2Fc1ca1bab-2f31-40a7-8cc9-79eafae3a0c7?alt=media&token=f90350c2-c09b-4317-91d3-37f54ebb5960",
+      "name" : "Nalasari Ekartasasra",
+      "outlet" : "Lavie Baby House"
+    },
+    "KA4v4xjC91cs1qanihhedVxJ8EM2" : {
+      "email" : "heh@gmail.com",
+      "id" : "KA4v4xjC91cs1qanihhedVxJ8EM2",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/uploadimage-af6be.appspot.com/o/userimage%2F6efbb5d4-93d8-47c8-9f18-83b7be88784a?alt=media&token=0e3aac0a-3037-4c36-806b-fedbab4a3741",
+      "name" : "hehe",
+      "outlet" : "hehe"
+    },
+    "NMg09VNEfiU8zkjm441hvsffwNm2" : {
+      "email" : "ini@gmail.com",
+      "id" : "NMg09VNEfiU8zkjm441hvsffwNm2",
+      "image" : "",
+      "name" : "ini",
+      "outlet" : "ini"
+    },
+    "W4uQMIqmA6aJ7WhTMDW4CP4IUon2" : {
+      "email" : "jumat@gmail.com",
+      "id" : "W4uQMIqmA6aJ7WhTMDW4CP4IUon2",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/uploadimage-af6be.appspot.com/o/userimage%2F111a788a-554a-4ef0-8f6d-be354d8f0d27?alt=media&token=ba19b066-018f-4f46-b476-e224dbadc8e4",
+      "name" : "jumat",
+      "outlet" : "jumat"
+    },
+    "Yi6WbaAjHwUqyIlEEWgChsnWsDf2" : {
+      "email" : "ganggang@gmail.com",
+      "id" : "Yi6WbaAjHwUqyIlEEWgChsnWsDf2",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/uploadimage-af6be.appspot.com/o/userimage%2F7fef8718-2b47-41e4-bf7c-a5d01aaf684f?alt=media&token=920c4b5b-089d-481e-afa7-9b4870982a16",
+      "name" : "Gina Anggini",
+      "outlet" : "bladaa"
+    },
+    "a9OTFDjFm7YzV6XC4YzbbwqiTG73" : {
+      "email" : "coba@gmail.com",
+      "id" : "a9OTFDjFm7YzV6XC4YzbbwqiTG73",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/uploadimage-af6be.appspot.com/o/userimage%2F1ed66e95-7659-4f12-a8d2-3443400693a7?alt=media&token=f1e3ce02-edcd-49b8-a2fa-fcda42adfeaf",
+      "name" : "Coba",
+      "outlet" : "coba"
+    },
+    "aGLCVwz2YbTyy1MGAaAzz8KLL223" : {
+      "email" : "boo@gmail.com",
+      "id" : "aGLCVwz2YbTyy1MGAaAzz8KLL223",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/uploadimage-af6be.appspot.com/o/userimage%2Fdcc84a3d-dcbc-46d8-b5f5-79065358c4ea?alt=media&token=c4f1ee8f-ef99-4d52-a09b-b73e4b640de6",
+      "name" : "bamboo",
+      "outlet" : "Here I Am"
+    },
+    "aNBb1O5TsAVLFx1e2QlHfTqCVGq1" : {
+      "email" : "o@gmail.com",
+      "id" : "aNBb1O5TsAVLFx1e2QlHfTqCVGq1",
+      "image" : "",
+      "name" : "o",
+      "outlet" : "o"
+    },
+    "nbzP8rbY2JcCUCKfw09LAHcld4p2" : {
+      "email" : "dyang041120istighfaro@gmail.com",
+      "id" : "nbzP8rbY2JcCUCKfw09LAHcld4p2",
+      "image" : "",
+      "name" : "q",
+      "outlet" : "q"
+    },
+    "oNTOtLWEnbdifPepUfrpQejrgoh2" : {
+      "email" : "tiga@gmail.com",
+      "id" : "oNTOtLWEnbdifPepUfrpQejrgoh2",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/uploadimage-af6be.appspot.com/o/userimage%2F64f8625e-5d57-4d3e-8db7-6fcabe9beb3b?alt=media&token=f6d18434-2e04-4082-9624-c5e3c6ba3353",
+      "name" : "diyangulala",
+      "outlet" : "Buah batu IHM"
+    },
+    "qJ3ssUXON7aRoX11Sb4qDGJPyg03" : {
+      "email" : "halah@gmail.com",
+      "id" : "qJ3ssUXON7aRoX11Sb4qDGJPyg03",
+      "image" : "",
+      "name" : "halah",
+      "outlet" : "hilihhh"
+    },
+    "tCreRog5VjcqHqNxHvwWCBmu41E3" : {
+      "email" : "dy@gmail.com",
+      "id" : "tCreRog5VjcqHqNxHvwWCBmu41E3",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/uploadimage-af6be.appspot.com/o/images%2Fb0ada3b3-fb4f-4874-9ed0-4dac7f7d3e05?alt=media&token=cdf65c4a-10c5-43c5-8a21-029fa92417f1",
+      "name" : "dy",
+      "outlet" : "hiahia"
+    },
+    "tLQaZ9UX0GWztlswD34PhNO7qxN2" : {
+      "email" : "bebas@gmail.com",
+      "id" : "tLQaZ9UX0GWztlswD34PhNO7qxN2",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/uploadimage-af6be.appspot.com/o/userimage%2F7a44e917-69ff-4e46-9ae5-000e7fdb5407?alt=media&token=c18e3c1e-cf04-4193-a659-2c09510d830c",
+      "name" : "bebas",
+      "outlet" : "bebas"
+    }
+  }
+}

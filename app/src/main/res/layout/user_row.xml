@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:orientation="horizontal">
+
+    <!-- Benerin ih si picassonya kenapa-->
+
+    <LinearLayout
+        android:layout_width="80dp"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:paddingLeft="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView"
+            android:src="@drawable/none"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#B1B0B0" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="221dp"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textColor="#6F6E6E"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserratregular"/>
+
+        <TextView
+            android:id="@+id/outletrow"
+            android:layout_width="221dp"
+            android:layout_height="25dp"
+            android:text="Outlet"
+            android:textSize="15sp"
+            android:fontFamily="@font/montserratregular"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

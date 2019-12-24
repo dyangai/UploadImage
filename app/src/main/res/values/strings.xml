@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SPG APK</string>
+    <string name="t1">Login</string>
+    <string name="t3">Register</string>
+    <string name="t4">Forgot Password?</string>
+    <string name="t_user">Username</string>
+    <string name="t_email">Email</string>
+    <string name="t_pass">Password</string>
+
+</resources>

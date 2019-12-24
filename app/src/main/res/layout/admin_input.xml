@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <!--
+    lAYOUT INPUT DATA GUDANG OLEH ADMIN
+    -->
+
+    <RelativeLayout
+        android:id="@+id/loginLayout"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="261dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/montserratmedium"
+            android:gravity="center_horizontal"
+            android:text="Input Data
+             Produk"
+            android:textColor="#3498DB"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginTop="95dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/bg"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="50dp"
+                android:paddingBottom="20dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/proname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FFF"
+                    android:fontFamily="@font/montserratregular"
+                    android:hint="Nama Produk"
+                    android:inputType="text"
+                    android:textSize="15dp"
+                    android:textStyle="bold"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/stok"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/harga"
+                    android:layout_marginBottom="0dp"
+                    android:backgroundTint="#FFF"
+                    android:fontFamily="@font/montserratregular"
+                    android:hint="Stok"
+                    android:inputType="number"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/merk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/stok"
+                    android:layout_marginBottom="0dp"
+                    android:backgroundTint="#FFF"
+                    android:fontFamily="@font/montserratregular"
+                    android:hint="Merk"
+                    android:inputType="text"
+                    android:textSize="15dp"
+                    android:textStyle="bold">
+
+                </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/harga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/merk"
+                    android:layout_marginBottom="0dp"
+                    android:backgroundTint="#FFF"
+                    android:fontFamily="@font/montserratregular"
+                    android:hint="Harga Satuan"
+                    android:inputType="number"
+                    android:textSize="15dp"
+                    android:textStyle="bold">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/bt_oke"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="520dp"
+            android:layout_marginEnd="110dp"
+            android:layout_marginBottom="50dp"
+            android:background="#3498DB"
+            android:text="oke"
+            android:textColor="#fff" />
+
+        <ImageButton
+            android:id="@+id/promage"
+            android:layout_width="wrap_content"
+            android:layout_height="95dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginEnd="110dp"
+            android:background="@drawable/bg"
+            android:elevation="7dp"
+            android:radius="3dp"/>
+
+    </RelativeLayout>
+
+</ScrollView>

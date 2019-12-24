@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="#F9F9F9"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl_reg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/sp_rectangle_root"
+
+        >
+        <EditText
+            android:id="@+id/reg_user"
+            android:paddingLeft="20dp"
+            android:drawableLeft="@drawable/user"
+            android:drawablePadding="20dp"
+            android:hint="Username"
+            android:backgroundTint="#FFF"
+            android:textColorHint="#B9B9B9"
+            android:textColor="#3498DB"
+            android:layout_width="275dp"
+            android:layout_height="55dp"
+            android:inputType="text"
+            android:fontFamily="@font/montserratregular"
+            />
+
+        <View
+            android:id="@+id/v_separator2"
+            android:layout_below="@+id/reg_user"
+            android:layout_width="275dp"
+            android:layout_height="0.5dp"
+            android:background="#E8E9E8"/>
+
+        <EditText
+            android:id="@+id/reg_email"
+            android:paddingLeft="20dp"
+            android:drawableLeft="@drawable/email2"
+            android:layout_below="@id/v_separator2"
+            android:textColorHint="#B9B9B9"
+            android:textColor="#3498DB"
+            android:drawablePadding="20dp"
+            android:hint="Email Address"
+            android:backgroundTint="#FFF"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="@font/montserratregular"
+            />
+
+        <View
+            android:id="@+id/v_separator"
+            android:layout_below="@+id/reg_email"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#E8E9E8"/>
+
+        <EditText
+            android:id="@+id/reg_password"
+            android:fontFamily="@font/montserratregular"
+            android:paddingLeft="20dp"
+            android:drawableLeft="@drawable/password"
+            android:drawablePadding="20dp"
+            android:layout_below="@+id/v_separator"
+            android:hint="Password"
+            android:textColor="#3498DB"
+            android:textColorHint="#B9B9B9"
+            android:backgroundTint="#FFF"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:inputType="textPassword"
+            />
+
+        <View
+            android:id="@+id/v_separator3"
+            android:layout_below="@+id/reg_password"
+            android:layout_width="275dp"
+            android:layout_height="0.5dp"
+            android:background="#E8E9E8"/>
+
+        <EditText
+            android:id="@+id/reg_outlet"
+            android:fontFamily="@font/montserratregular"
+            android:paddingLeft="20dp"
+            android:drawableLeft="@drawable/outlet"
+            android:drawablePadding="18dp"
+            android:layout_below="@+id/v_separator3"
+            android:textColorHint="#B9B9B9"
+            android:hint="Outlet Name"
+            android:backgroundTint="#FFF"
+            android:textColor="#3498DB"
+            android:layout_width="220dp"
+            android:layout_height="55dp"
+            android:inputType="text"
+            />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:elevation="10dp"
+        android:radius="5dp"
+        android:src="@drawable/done"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:layout_above="@+id/rl_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:text="@string/t3"
+        android:textColor="#3498DB"
+        android:fontFamily="@font/montserratregular"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/Login"
+        android:layout_width="192dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="430dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="-3dp"
+        android:background="@drawable/bgbottom"
+        android:elevation="100dp"
+        android:fontFamily="@font/montserratregular"
+        android:radius="100dp"
+        android:text="@string/t1"
+        android:textAllCaps="false"
+        android:textColor="#3498DB"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:shadowColor="#C9CACA"
+        android:outlineAmbientShadowColor="#C9CACA"
+        android:outlineSpotShadowColor="#C9CACA"/>
+
+    <ProgressBar
+        android:id="@+id/reg_progressbar"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
