@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.google.firebase.auth.FirebaseAuth
+import com.uploadimage.client.DashActivity
 
 class SplashActivity : AppCompatActivity() {
     lateinit var mAuth: FirebaseAuth

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/action_admin"
+            android:title="Harian"
+
+            />
+        <item
+            android:id="@+id/action_logout"
+            android:title="Bulanan"
+            />
+        <item
+            android:id="@+id/action_thn"
+            android:title="Tahunan"
+            />
+    </group>
+</menu>

@@ -11,20 +11,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
+        <activity android:name=".Filter"/>
+        <activity android:name=".client.EditLAporan" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ILaporan"/>
-        <activity android:name=".Admin_Input" />
-        <activity android:name=".DataProduk" />
-        <activity android:name=".DashActivity" />
+        <activity android:name=".client.ILaporan" />
+        <activity android:name=".admin.Admin_Input" />
+        <activity android:name=".admin.DataProduk" />
+        <activity android:name=".client.DashActivity" >
+       <!-- <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>-->
+        </activity>
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -34,10 +40,9 @@
         <activity
             android:name=".ResetPasswordActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".DashAdmin" />
+        <activity android:name=".admin.DashAdmin" />
         <activity android:name=".LPJual_Activity" />
-        <activity android:name=".ProfileinActivity" />
-        <activity android:name=".InputLP_Activity" />
+        <activity android:name=".client.ProfileinActivity" />
     </application>
 
 </manifest>

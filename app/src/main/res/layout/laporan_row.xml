@@ -1,209 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<!-- ini teh gini, si cardview yang disini nanti ada di dalem rcv
- di layout lpjual, dan filter perhari itu gini, kalau masukin beda barang tapi
- satu tanggal tampilin di satu ccardview ini, dengan tanggal yang sama, berarti
- mungkin jadi nested rcv atau dalem rcv ada listview. total pengeluaran adalah
- penjumlahan hasil total produk di hari itu kemudian nanti ada card terjual,
- itu adalah hasil dari target dikurang pengeluaran-->
+    <!-- ini teh gini, filter perhari itu kalau masukin beda barang tapi
+     satu tanggal tampilin di satu ccardview ini, dengan tanggal yang sama, berarti
+     mungkin jadi nested rcv atau dalem rcv ada listview. total pengeluaran adalah
+     penjumlahan hasil total produk di hari itu kemudian nanti ada card terjual,
+     itu adalah hasil dari target dikurang pengeluaran-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <androidx.cardview.widget.CardView
+       <androidx.cardview.widget.CardView
             android:id="@+id/edit_data"
-            app:cardElevation="0dp"
+            app:cardElevation="3dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
             android:clickable="true"
-            android:focusable="true">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingTop="3dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/date_laporan"
-                    android:layout_width="61dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserratregular"
-                    android:text="02 / 05 / 19"
-                    android:textColor="#929292"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/pengeluaran"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="110dp"
-                    android:fontFamily="@font/montserratregular"
-                    android:text="Pengeluaran : 700000"
-                    android:textColor="#929292"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <View
-                android:id="@+id/view1"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="20dp"
-                android:background="#CFCFCF" />
+            android:focusable="true"
+            android:layout_margin="2dp"
+            app:cardCornerRadius="6dp">
 
             <LinearLayout
-                android:layout_width="165dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="22dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/produk"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:src="#ECECEC"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/l"
-                    android:layout_width="96dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingTop="10dp"
-                    android:paddingLeft="5dp">
-
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="3dp"
+                    android:orientation="horizontal">
                     <TextView
-                        android:id="@+id/proname"
-                        android:layout_width="65dp"
-                        android:layout_height="37dp"
+                        android:id="@+id/date_laporan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/montserratregular"
-                        android:text="Nebulizerr N-1234 "
+                        android:text="02 / 05 / 19"
                         android:textColor="#929292"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/merk"
-                        android:layout_width="55dp"
+               <!--     <TextView
+                        android:id="@+id/pengeluaran"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="110dp"
                         android:fontFamily="@font/montserratregular"
-                        android:text="OMRON"
-                        android:textColor="#BDBBBB"
+                        android:text="Pengeluaran : 0"
+                        android:textColor="#929292"
                         android:textSize="10sp"
-                        android:textStyle="bold" />
-
-
+                        android:textStyle="bold" /> -->
                 </LinearLayout>
 
                 <View
-                    android:id="@+id/view2"
-                    android:layout_width="0.5dp"
-                    android:layout_height="62dp"
-                    android:layout_marginTop="7dp"
-                    android:background="#BDBBBB"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="135dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="22dp"
-                android:layout_marginLeft="165dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:orientation="vertical"
-                android:gravity="center_vertical"
-                >
-
-                <LinearLayout
+                    android:id="@+id/view1"
                     android:layout_width="match_parent"
-                    android:layout_height="15dp"
+                    android:layout_height="0.5dp"
+                    android:background="#CFCFCF" />
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="165dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:paddingBottom="2dp">
 
-                    >
+                    <ImageView
+                        android:id="@+id/image_produk"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="8dp"
+                        android:src="#ECECEC"/>
 
-                    <TextView
-                        android:id="@+id/apa"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserratregular"
-                        android:text="Qty        :  "
-                        android:textColor="#929292"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:id="@+id/l"
+                        android:layout_width="96dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        android:paddingLeft="5dp">
 
-                    <TextView
-                        android:id="@+id/value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserratregular"
-                        android:text="50"
-                        android:textColor="#929292"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/proname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="Nebulizerr N-1234 "
+                            android:textColor="#929292"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/merk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="OMRON"
+                            android:textColor="#BDBBBB"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="0.5dp"
+                        android:layout_height="62dp"
+                        android:layout_marginTop="7dp"
+                        android:background="#BDBBBB"/>
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="15dp"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
                     >
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserratregular"
-                        android:text="Harga   :  "
-                        android:textColor="#929292"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:orientation="horizontal" >
 
-                    <TextView
-                        android:id="@+id/harga"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserratregular"
-                        android:text="5000"
-                        android:textColor="#929292"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="Qty        :  "
+                            android:textColor="#929292"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/qty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="0"
+                            android:textColor="#929292"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="Harga   :  "
+                            android:textColor="#929292"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/harga"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="0"
+                            android:textColor="#929292"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="Total     :  "
+                            android:textColor="#929292"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="0"
+                            android:textColor="#929292"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserratregular"
-                        android:text="Total     :  "
-                        android:textColor="#929292"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/total"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserratregular"
-                        android:text="5000000"
-                        android:textColor="#929292"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+            </LinearLayout>
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
+     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

@@ -8,14 +8,9 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.uploadimage.Model.ModelProduk
-import com.uploadimage.Model.ModelUser
+import com.uploadimage.admin.DashAdmin
+import com.uploadimage.client.DashActivity
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_register.*
 
 
 class LoginActivity : AppCompatActivity() {
@@ -72,19 +67,20 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 progressbar.visibility = View.GONE
 
-                val uid = mAuth.currentUser!!.uid
-                val roleRef = FirebaseDatabase.getInstance().getReference("Users").child(uid)
+                val uid = mAuth.currentUser!!.email.toString()
+
+               // val roleRef = FirebaseDatabase.getInstance().getReference("Users")
 
                 if (task.isSuccessful) {
+                    if(uid.equals("admin@gmail.com")) {
+                        dashAdmin()
+                    }else{
+                        dashClient()
+                    }
 
-                    roleRef.addValueEventListener(object : ValueEventListener {
-                        override fun onDataChange(p0: DataSnapshot) {
-                            if(p0.child("email").value!!.toString() == "admin@gmail.com") {
-                                dashAdmin()
+                   /* roleRef.addValueEventListener(object : ValueEventListener {
+                        override fun onDataChange(p0: DataSnapshot) {//p0.child("").value!!.toString()
 
-                            }else{
-                                dashClient()
-                            }
 
                         }
 
@@ -92,7 +88,7 @@ class LoginActivity : AppCompatActivity() {
 
                         }
                     })
-                    //dashClient()
+                    //dashClient()*/
                 } else {
                     Toast.makeText(this, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
@@ -114,12 +110,12 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-  /* override fun onStart() {
+  override fun onStart() {
         super.onStart()
         mAuth.currentUser?.let {
             dashClient()
         }
-    }*/
+    }
 
 }
 
