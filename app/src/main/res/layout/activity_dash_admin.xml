@@ -13,69 +13,80 @@
     SI SPG ITU YA
     -->
 
-    <LinearLayout
-        android:id="@+id/l1"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:background="#f2f2f2"
-        android:paddingTop="5dp"
-        android:paddingLeft="15dp"
-        android:paddingBottom="50dp">
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="5dp"
-            android:layout_marginRight="10dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_view"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="left"
+                app:civ_border_color="#5A5A5A"
+                android:layout_marginTop="2dp"
+                app:civ_border_width="2dp"
+                android:src="@drawable/profile"/>
+
             <TextView
                 android:id="@+id/p_nama"
                 android:layout_width="wrap_content"
-                android:text="Username"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="25sp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="95dp"
+                android:layout_marginEnd="92dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/montserratregular"
+                android:gravity="center"
+                android:text="Admin"
+                android:textColor="#5A5A5A"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingRight="15dp"
-            android:gravity="right">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/image_view"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="10dp"
-                app:civ_border_color="#fff"
-                app:civ_border_width="2dp"
-                android:src="@drawable/profile"/>
-        </LinearLayout>
-    </LinearLayout>
+        <!--    <ImageView
+               android:id="@+id/op"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentEnd="true"
+               android:layout_marginTop="3dp"
+               android:layout_marginEnd="6dp"
+               android:background="@drawable/op"/>-->
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <LinearLayout
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.viewpager.widget.ViewPager>
+   <!-- <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <EditText
             android:id="@+id/searchuser"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#fff"
+            android:backgroundTint="#F7F7F7"
             android:hint="Search.."
             android:drawableLeft="@drawable/search"
             android:paddingRight="5dp"
             android:paddingLeft="12dp"
-            android:paddingTop="20dp"
+            android:paddingTop="15dp"
             android:background="#fff"
-            android:paddingBottom="10dp"
+            android:paddingBottom="15dp"
             android:drawablePadding="12dp"/>
 
         <ImageButton
@@ -95,5 +106,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F9F9F9"
-        />
+        /> -->
 </LinearLayout>

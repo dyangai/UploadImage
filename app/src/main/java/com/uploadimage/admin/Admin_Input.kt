@@ -83,26 +83,35 @@ class Admin_Input : AppCompatActivity() {
         }
 
         bt_oke.setOnClickListener{
-           val nama = proname.text.toString().trim()
-           val merk = merk.text.toString().trim()
-           val stok = stok.text.toString().trim()
-           val harga = harga.text.toString().trim()
+            val nama = proname.text.toString().trim()
+            val merk = merk.text.toString().trim()
+            val stok = stok.text.toString().trim()
+            val harga = harga.text.toString().trim()
 
-           if(bt_oke.text.equals("Update")) {
-               updateData(nama, merk, stok, harga)
-           }
-           else{
-               uploadImage()
-               save(nama, merk, stok, harga)
 
-           }
+            if(selectedPhotoUri == null) return@setOnClickListener
+            val filename = UUID.randomUUID().toString()
+            val storage = FirebaseStorage.getInstance().getReference("/productimage/$filename")
+            storage.putFile(selectedPhotoUri!!).addOnCompleteListener(){
+                storage.downloadUrl.addOnSuccessListener {
+                    val ini = (it.toString())
 
-            //hitung()
+                    if(bt_oke.text.equals("Update")) {
+                        updateData(nama, merk, stok, harga)
+                    }
+                    else{
+                        // uploadImage()
+                        save(nama, merk, stok, harga, ini)
+
+                    }
+
+                }
+            }
         }
 
     }
 
-    private fun uploadImage(){
+   /* private fun uploadImage(){
         if(selectedPhotoUri == null) return
         val filename = UUID.randomUUID().toString()
         val storage = FirebaseStorage.getInstance().getReference("/productimage/$filename")
@@ -121,7 +130,7 @@ class Admin_Input : AppCompatActivity() {
             }
         }
 
-    }
+    }*/
 
     var selectedPhotoUri: Uri?=null
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -138,19 +147,17 @@ class Admin_Input : AppCompatActivity() {
 
     }
 
-    private fun save(nama: String,merk: String,stok: String,harga: String){
+    private fun save(nama: String,merk: String,stok: String,harga: String, ini: String){
         mAuth = FirebaseAuth.getInstance()
         val uid = mAuth.currentUser?.uid
         ref = FirebaseDatabase.getInstance().getReference("Data Produk").push()
         val key= ref.key.toString()
 
-           // val s = stok.trim()
-           // val h = harga.trim()
             val sint = stok.toIntOrNull()
             val hint = harga.toIntOrNull()
             val total = hint?.let { sint?.times(it) }//sint?.times(hint!!)
 
-        val produk = ModelProduk(key,uid!!,nama,merk,stok,"",harga, total.toString())
+        val produk = ModelProduk(key,uid!!,nama,merk,stok,ini,harga, total.toString())
         ref.setValue(produk).addOnCompleteListener{task ->
             if(task.isSuccessful) {
                 val intent = Intent(this, DashActivity::class.java).apply {
@@ -181,29 +188,13 @@ class Admin_Input : AppCompatActivity() {
     }
 
 
-
-
-   // private fun savedata(nama: String,merk: String,stok: String,harga: String){
-
-        //val currentUser = FirebaseAuth.getInstance().currentUser
-        //val author = currentUser!!.uid
-        //val key= ref.push().key.toString()
-        //val map = ModelProduk(key,nama,merk,stok,"",harga)
-
-        //ref.child(key).setValue(map).addOnCompleteListener(OnCompleteListener {task ->
-            //if (task.isSuccessful) {
-                   // startActivity(Intent(this, DashActivity::class.java))
-            //}
-       // })
-    //}
-
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
     }
 
     override fun onBackPressed() {
-        startActivity(Intent(this@Admin_Input, DashActivity::class.java))
+        startActivity(Intent(this@Admin_Input, DashAdmin::class.java))
         finish()
     }
 

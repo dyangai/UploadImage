@@ -56,7 +56,6 @@ class DashActivity : AppCompatActivity() {
         val actionbar = supportActionBar
         actionbar?.title = "Dashboard Client"
         supportActionBar!!.elevation = 0f
-        //rc_dataproduk.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
         //header
         mAuth = FirebaseAuth.getInstance()
@@ -84,24 +83,26 @@ class DashActivity : AppCompatActivity() {
 
             })
 
+    /*    val q1 = FirebaseDatabase.getInstance().getReference()
+            .child("Data Produk")
+            .orderByChild("id_produk")
+        q1.addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+                Log.d("DashActivity", "ERROR")
+            }
 
-      /*  filter.setOnClickListener {
-9
-                val navDrawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
-                // If the navigation drawer is not open then open it, if its already open then close it.
-                if (!navDrawer.isDrawerOpen(Gravity.RIGHT)) {
-                    navDrawer.openDrawer(Gravity.RIGHT)
-                }
-                else {
-                    navDrawer.closeDrawer(Gravity.LEFT)
-                }
-        }*/
+            override fun onDataChange(p0: DataSnapshot) {
+                val key = p0.key.toString()
+                val t = p0.child(key).child("totalstok_harga").value!!.toString()
+                Log.d("DashActivity", "Isi"+t)
+            }
 
+        })*/
 
-
-        c_input.setOnClickListener(clickListener)
-       // c_dataproduk.setOnClickListener(clickListener)
-        //c_dataproduk.setOnClickListener(clickListener)
+        c_input.setOnClickListener{
+            val intent = Intent(this, ILaporan::class.java)
+            startActivity(intent)
+        }
 
         profile.setOnClickListener {
             val intent = Intent(this, ProfileinActivity::class.java)
@@ -110,7 +111,6 @@ class DashActivity : AppCompatActivity() {
 
         fetchLaporan()
        // hitungTarget()
-       // fetchDataproduk()
     }
 
     private fun fetchLaporan(){
@@ -126,8 +126,7 @@ class DashActivity : AppCompatActivity() {
                             adapter.add(mLaporan(lap))
                         }
                     }
-
-
+                    rc_lp.adapter = adapter
                     adapter.setOnItemLongClickListener { item, view ->
 
                         AlertDialog.Builder(this@DashActivity).apply {
@@ -157,7 +156,7 @@ class DashActivity : AppCompatActivity() {
                         }
                         return@setOnItemLongClickListener true
                     }
-                    rc_lp.adapter = adapter
+
                     //adapter.notifyDataSetChanged()
                 }
 
@@ -165,67 +164,32 @@ class DashActivity : AppCompatActivity() {
 
                 }
             })
-    }
 
-   /* private fun fetchDataproduk(){
-        db = FirebaseDatabase.getInstance().getReference("Data Produk")
-        db.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(p0: DataSnapshot) {
-
-
-                val adapter = GroupAdapter<GroupieViewHolder>()
-                p0.children.forEach{
-                    val model = it.getValue(ModelProduk::class.java)
-                    if(model != null ) {
-                       // adapter.add(DataItem(model))
-                    }
-                }
-                // if((uid.equals(admin))) {
-
-                //rc_dataproduk.adapter = adapter
-            }
-
-            override fun onCancelled(p0: DatabaseError) {
-
-            }
-        })
-    }*/
-
-    private val clickListener: View.OnClickListener = View.OnClickListener { view ->
-        when (view.id) {
-            R.id.c_input -> input()
-            //R.id.c_dataproduk -> dp()
-            //R.id.c_edit -> edit()
-            //R.id.c_riwayat -> riwayat()
-        }
-    }
-
-    private fun input() {
-        val intent = Intent(this, ILaporan::class.java)
-        startActivity(intent)
-    }
-
-    private fun dp() {
-        val intent = Intent(this, Admin_Input::class.java)
-        startActivity(intent)
-    }
-
-    private fun filter() {
-       // val intent = Intent(this, MainActivity::class.java)
-       // startActivity(intent)
     }
 
     private fun hitungTarget(){
         //tambahkan semua value dari child (harga) x child (stok)
        // mAuth = FirebaseAuth.getInstance()
         //val uid = mAuth.currentUser?.uid
-       q = FirebaseDatabase.getInstance().getReference().child("Data Produk")
-       val q1 = FirebaseDatabase.getInstance().getReference("Data Produk").child(q.key!!)
+      // q = FirebaseDatabase.getInstance().getReference().child("Data Produk")
+        val q1 = FirebaseDatabase.getInstance().getReference().child("Data Produk")
+        q1.addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+                Log.d("DashActivity", "ERROR")
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+               val t = p0.child("totalstok_harga").getValue().toString()
+                Log.d("DashActivity", "Isi"+t)
+            }
+
+        })
+
         //val q1 = FirebaseDatabase.getInstance().getReference().child("Data Produk")
             //.child("Data Produk")
             //.orderByChild("id_produk")
             //.equalTo(q.key)
-            q1.addValueEventListener(object : ValueEventListener{
+           /* q1.addValueEventListener(object : ValueEventListener{
                 override fun onCancelled(p2: DatabaseError) {
 
                 }
@@ -234,13 +198,13 @@ class DashActivity : AppCompatActivity() {
 
                     //for(snapshot in p2.children){
                         //var sum = 0
-                        val t = p2.child("totalstok_harga").value!!.toString()
-                        val nm = p2.child("merk").value!!.toString()
-                        Log.d("DashActivity","isinya"+t)
-                        Log.d("DashActivity","PERCOBAAN"+nm)
-                       // val tint = t.toInt()
-                       // sum += tint
-                       // val map = HashMap<String,Any>()
+                        //val t = p2.child("totalstok_harga").value!!.toString()
+                        //val nm = p2.child("merk").value!!.toString()
+                        //Log.d("DashActivity","isinya"+t)
+                        //Log.d("DashActivity","PERCOBAAN"+nm)
+                        // val tint = t.toInt()
+                        // sum += tint
+                        // val map = HashMap<String,Any>()
                         //val t = map.get("totalstok_harga").toString()
                         //val tint = t.toInt()
                         //sum += tint
@@ -249,7 +213,7 @@ class DashActivity : AppCompatActivity() {
                     //}
                 }
 
-            })
+            })*/
 
 
        /* q1.addListenerForSingleValueEvent(object : ValueEventListener{
@@ -337,8 +301,6 @@ class DashActivity : AppCompatActivity() {
 
 }
 
-
-
 class mLaporan(val ml: ModelLaporan): Item<GroupieViewHolder>() {
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
         if (ml.image_lap.isEmpty()) {
@@ -359,9 +321,7 @@ class mLaporan(val ml: ModelLaporan): Item<GroupieViewHolder>() {
             //viewHolder.itemView.pengeluaran.text = ml.image_lap
             Picasso.get().load(ml.image_lap).into(viewHolder.itemView.image_produk)
         }
-      /*  viewHolder.itemView.setOnClickListener { view ->
 
-        }*/
     }
     override fun getLayout(): Int {
         return R.layout.laporan_row
@@ -369,27 +329,7 @@ class mLaporan(val ml: ModelLaporan): Item<GroupieViewHolder>() {
 
 
 }
-/*class DataItem(val model: ModelProduk): Item<GroupieViewHolder>() {
-    override fun bind(viewHolder: GroupieViewHolder, position: Int) {
-        if(model.image.isEmpty()){
-            viewHolder.itemView.proname_show.setText(model.nama_produk)
-            viewHolder.itemView.merk_show.setText(model.merk)
-            viewHolder.itemView.stok_produk_show.setText(model.stok)
-            viewHolder.itemView.harga_produk_show.setText(model.harga)
-        }else {
-            viewHolder.itemView.proname_show.setText(model.nama_produk)
-            viewHolder.itemView.merk_show.setText(model.merk)
-            viewHolder.itemView.stok_produk_show.setText(model.stok)
-            viewHolder.itemView.harga_produk_show.setText(model.harga)
-           Picasso.get().load(model.image).into(viewHolder.itemView.image_produk_show)
-        }
-    }
 
-    override fun getLayout(): Int {
-        return R.layout.produk_row
-    }
-
-}*/
 
 
 

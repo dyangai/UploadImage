@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
+    android:padding="5dp"
     android:orientation="horizontal">
 
     <!-- Benerin ih si picassonya kenapa-->
@@ -12,8 +12,7 @@
     <LinearLayout
         android:layout_width="80dp"
         android:layout_height="65dp"
-        android:gravity="center"
-        android:paddingLeft="10dp">
+        android:gravity="center">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView"
@@ -47,6 +46,7 @@
             android:layout_width="221dp"
             android:layout_height="25dp"
             android:text="Outlet"
+            android:textColor="#2196F3"
             android:textSize="15sp"
             android:fontFamily="@font/montserratregular"
             android:textStyle="bold" />

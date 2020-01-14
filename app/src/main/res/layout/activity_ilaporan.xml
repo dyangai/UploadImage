@@ -9,13 +9,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#F7F7F7">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#F8F8F8">
+        android:background="#F7F7F7">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/date"
@@ -105,7 +106,7 @@
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:orientation="vertical"
-        android:background="#F8F8F8">
+        android:background="#F7F7F7">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card"
@@ -185,17 +186,35 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bt_save"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="#2196F3"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="6dp"
+                android:paddingBottom="9dp"
+                android:text="Save"
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
-    <Button
-        android:id="@+id/bt_save"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="save"
-        android:textStyle="bold"
-        android:textColor="#fff"
-        android:textSize="15sp"
-        android:layout_margin="20dp"/>
+
+
 
     </LinearLayout>
 

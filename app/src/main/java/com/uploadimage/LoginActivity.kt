@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : AppCompatActivity() {
 
     lateinit var mAuth: FirebaseAuth
+    private var session = userSession()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,28 +68,26 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 progressbar.visibility = View.GONE
 
-                val uid = mAuth.currentUser!!.email.toString()
+               // val uid = mAuth.currentUser!!.email.toString()
 
                // val roleRef = FirebaseDatabase.getInstance().getReference("Users")
 
                 if (task.isSuccessful) {
-                    if(uid.equals("admin@gmail.com")) {
+                    if(email.equals("admin@gmail.com")){
+                        dashAdmin()
+                        session.setStatus(this@LoginActivity, "admin")
+                    }else{
+                        dashClient()
+                        session.setStatus(this@LoginActivity, "client")
+                    }
+
+                    /*if(uid.equals("admin@gmail.com")) {
                         dashAdmin()
                     }else{
                         dashClient()
                     }
+*/
 
-                   /* roleRef.addValueEventListener(object : ValueEventListener {
-                        override fun onDataChange(p0: DataSnapshot) {//p0.child("").value!!.toString()
-
-
-                        }
-
-                        override fun onCancelled(p0: DatabaseError) {
-
-                        }
-                    })
-                    //dashClient()*/
                 } else {
                     Toast.makeText(this, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
@@ -118,6 +117,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
 }
+
+
 
 
 

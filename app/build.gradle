@@ -49,4 +49,5 @@ dependencies {
     implementation "com.xwray:groupie:2.6.0"
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.firebaseui:firebase-ui-database:2.3.0'
+    implementation 'com.android.support:design:29.0.2'
 }

@@ -28,7 +28,6 @@ import kotlinx.android.synthetic.main.produk_row.view.*
 class DataProduk : AppCompatActivity() {
     lateinit var mAuth: FirebaseAuth
     lateinit var db: DatabaseReference
-    var actionMode: ActionMode? = null
 
     companion object{
         val NAMA_PRODUK = "NAMA_PRODUK"
@@ -48,7 +47,7 @@ class DataProduk : AppCompatActivity() {
         actionbar?.setDisplayHomeAsUpEnabled(true)
         rc_dataproduk.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
-        //val uid = mAuth.currentUser!!.uid
+
         db = FirebaseDatabase.getInstance().getReference().child("Data Produk")
 
         fetchUsers()
@@ -71,8 +70,6 @@ class DataProduk : AppCompatActivity() {
     }
 
     private fun fetchUsers(){
-
-
         db.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
 
@@ -85,7 +82,7 @@ class DataProduk : AppCompatActivity() {
 
                 }
                // if((uid.equals(admin))) {
-                    adapter.setOnItemLongClickListener(object : OnItemLongClickListener {
+                   /* adapter.setOnItemLongClickListener(object : OnItemLongClickListener {
                         override fun onItemLongClick(item: Item<*>, view: View): Boolean {
 
                             AlertDialog.Builder(this@DataProduk).apply {
@@ -117,11 +114,7 @@ class DataProduk : AppCompatActivity() {
                             return true
                         }
                     })
-               // }
-               // val admin = FirebaseDatabase.getInstance().getReference()
-                   // .child("Users/")
-
-               // if(uid.equals(p0.child("id").value!!.toString())) {
+               // }*/
 
                 adapter.setOnItemClickListener { item, view ->
                     val produkItem = item as DataItem
@@ -130,7 +123,7 @@ class DataProduk : AppCompatActivity() {
                     startActivityForResult(intent, 0)
                     finish()
                 }
-            //    }
+
                 rc_dataproduk.adapter = adapter
             }
 
@@ -160,8 +153,7 @@ class DataProduk : AppCompatActivity() {
         query.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(ds: DataSnapshot) {
                 val adapter = GroupAdapter<GroupieViewHolder>()
-                           //if (search.search.text.toString() == "") {
-                               //adapter.clear()
+
 
                 ds.children.forEach {
 
@@ -174,69 +166,6 @@ class DataProduk : AppCompatActivity() {
 
                 }
 
-                // if((uid.equals(admin))) {
-                adapter.setOnItemLongClickListener(object : OnItemLongClickListener {
-                    override fun onItemLongClick(item: Item<*>, view: View): Boolean {
-
-                        AlertDialog.Builder(this@DataProduk).apply {
-                            val options = arrayOf("Update", "Delete")
-                            setItems(options, DialogInterface.OnClickListener() { _, which ->
-                                if (which == 0) {
-                                    val produkItem = item as DataItem
-                                    val intent = Intent(view.context, Admin_Input::class.java)
-                                    intent.putExtra(NAMA_PRODUK, produkItem.model)
-                                    startActivityForResult(intent, 0)
-                                    finish()
-                                }
-                                if (which == 1) {
-                                    val produkItem = item as DataItem
-
-                                    val querydp = FirebaseDatabase.getInstance().getReference().child("Data Produk")
-                                   // val keys = querydp.key
-                                     //val key = querydp.orderByChild("id_produk").equalTo(keys)
-                                       // querydp.child(produkItem.model.id_produk).removeValue()
-
-                                       // Toast.makeText(this@DataProduk,"Done", Toast.LENGTH_SHORT).show()
-
-
-                                    // .child("Data Produk")
-                                    //.orderByChild("id_produk")
-                                    // .equalTo(key)
-
-
-                                    querydp.addValueEventListener(object : ValueEventListener{
-                                         override fun onCancelled(dl: DatabaseError) {
-                                             Toast.makeText(this@DataProduk,"Error", Toast.LENGTH_SHORT).show()
-                                         }
-
-                                         override fun onDataChange(dl: DataSnapshot) {
-                                             querydp.child(produkItem.model.id_produk).removeValue()
-                                             if(dl.key == null){
-                                                 Toast.makeText(this@DataProduk,"Done", Toast.LENGTH_SHORT).show()
-                                                 adapter.notifyItemRemoved(produkItem.getPosition(item))
-                                                 adapter.notifyDataSetChanged()
-                                             }
-                                             else{
-                                                 Toast.makeText(this@DataProduk,"Lieur", Toast.LENGTH_SHORT).show()
-                                                 adapter.notifyItemRemoved(produkItem.getPosition(item))
-                                                 adapter.notifyDataSetChanged()
-                                             }
-                                         }
-
-                                     })
-                                    //deleteData()
-                                }
-                            }).create().show()
-
-                        }
-                        return true
-                    }
-                })
-                // }
-                // val admin = FirebaseDatabase.getInstance().getReference()
-                // .child("Users/")
-
-                // if(uid.equals(p0.child("id").value!!.toString())) {
 
                 adapter.setOnItemClickListener { item, view ->
                     val produkItem = item as DataItem
@@ -247,7 +176,6 @@ class DataProduk : AppCompatActivity() {
                 }
 
                 rc_dataproduk.adapter = adapter
-                  //}
             }
 
             override fun onCancelled(ds: DatabaseError) {

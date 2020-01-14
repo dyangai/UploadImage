@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ShowdpFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="3dp"
+                app:cardBackgroundColor="#F0F0F0"
+                android:clickable="true"
+                android:focusable="true">
+
+            <EditText
+                android:id="@+id/searchdp"
+                android:layout_width="252dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F0F0F0"
+                android:hint="Search.."
+                android:drawableLeft="@drawable/search"
+                android:paddingRight="5dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="13dp"
+                android:drawablePadding="12dp"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="2dp"
+                app:cardBackgroundColor="#2196F3"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_gravity="center"
+                >
+
+                <ImageButton
+                    android:id="@+id/add"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/add2"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_dataproduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </LinearLayout>
+
+</FrameLayout>

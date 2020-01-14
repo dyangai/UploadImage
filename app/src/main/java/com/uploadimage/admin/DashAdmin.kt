@@ -16,12 +16,14 @@ import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import com.uploadimage.LoginActivity
 import com.uploadimage.Model.ModelUser
+import com.uploadimage.PagerAdapter
 import com.uploadimage.R
 import com.uploadimage.client.DashActivity
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.GroupieViewHolder
 import kotlinx.android.synthetic.main.activity_dash_admin.*
+import kotlinx.android.synthetic.main.fragment_showclient.*
 import kotlinx.android.synthetic.main.user_row.view.*
 
 class DashAdmin : AppCompatActivity() {
@@ -31,41 +33,43 @@ class DashAdmin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_admin)
-        supportActionBar?.title = "Dashboard Admin"
-        supportActionBar!!.elevation = 0f
+        setSupportActionBar(toolbar)
 
-        rc_view.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
-
-        image_view.setOnClickListener{
-
-        }
-
-        filter.setOnClickListener{
-            val intent = Intent(this, Admin_Input::class.java)
-            startActivity(intent)
-        }
-
-
-        ref = FirebaseDatabase.getInstance().getReference("/Users")
-        fetchUsers()
-        searchuser.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
-                val username = searchuser.text.toString().trim()
-                searchUsers(username)
-            }
-
-        })
-
-
+        vp_main.adapter = PagerAdapter(supportFragmentManager)
+        tabs_main.setupWithViewPager(vp_main)
     }
-    private fun fetchUsers(){
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.option_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.action_logout) {
+
+            AlertDialog.Builder(this).apply {
+                setTitle("Are you sure?")
+                setPositiveButton("Yes") { _, _ ->
+                    FirebaseAuth.getInstance().signOut()
+                    logout()
+                }
+                setNegativeButton("Cancel") { _, _ ->
+                }
+            }.create().show()
+
+        }
+        return super.onOptionsItemSelected(item!!)
+    }
+
+    private fun logout(){
+        val intent = Intent(this, LoginActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        startActivity(intent)
+    }
+
+
+   /* private fun fetchUsers(){
 
          ref.addListenerForSingleValueEvent(object : ValueEventListener{
              override fun onDataChange(p0: DataSnapshot) {
@@ -182,27 +186,6 @@ class DashAdmin : AppCompatActivity() {
             }
     } */
 
-
-}
-
-
-
-class UserItem(val user: ModelUser?): Item<GroupieViewHolder>() {
-    override fun bind(viewHolder: GroupieViewHolder, position: Int) {
-        if(user?.image!!.isEmpty()){
-            viewHolder.itemView.username.text = user.name
-            viewHolder.itemView.outletrow.text = user.outlet
-        }else {
-            viewHolder.itemView.username.text = user.name
-            viewHolder.itemView.outletrow.text = user.outlet
-            Picasso.get().load(user.image).into(viewHolder.itemView.imageView)
-        }
-    }
-
-    override fun getLayout(): Int {
-        return R.layout.user_row
-    }
-
-
+*/
 }
 
